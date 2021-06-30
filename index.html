@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url("images.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      #output {
+        height: 200px;
+        margin: 0px 50px;
+        width: 200px;
+        background-color: #23dcba;
+        color: #c709de;
+        /* border: 3px solid red; */
+        font-size: 3rem;
+        /* text-align: center; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 33px;
+      }
+      input {
+        height: 50px;
+        width: 100px;
+        background-color: rgb(131, 216, 202);
+        color: rgb(12, 10, 10);
+        margin: 0px 50px;
+        outline: none;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+
+      button {
+        font-size: 20px;
+        height: 40px;
+        width: 105px;
+        margin: 5px;
+        border: none;
+        border-radius: 18px;
+        outline: none;
+        cursor: pointer;
+        background-color: #32cd32;
+        color: rgb(255 255 255);
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="number" id="a" />
+      <input type="number" id="b" />
+      <button id="add">ADD</button>
+      <button id="subtract">Subtract</button>
+      <button id="multiply">Multiply</button>
+      <button id="divide">Divide</button>
+      <div id="output"></div>
+    </div>
+  </body>
+  <script>
+    const a = document.getElementById("a");
+    const b = document.getElementById("b");
+    const add = document.getElementById("add");
+    const subtract = document.getElementById("subtract");
+    const multiply = document.getElementById("multiply");
+    const divide = document.getElementById("divide");
+    const outputBox = document.getElementById("output");
+    const addFunc = () => {
+      let output = parseInt(a.value) + parseInt(b.value);
+      outputBox.textContent = output;
+      console.log(output);
+    };
+    const subtractFunc = () => {
+      let output = parseInt(a.value) - parseInt(b.value);
+      outputBox.textContent = output;
+      console.log(output);
+    };
+    const multiplyFunc = () => {
+      let output = parseInt(a.value) * parseInt(b.value);
+      outputBox.textContent = output;
+      console.log(output);
+    };
+    const divideFunc = () => {
+      let output = parseInt(a.value) / parseInt(b.value);
+      outputBox.textContent = output;
+      console.log(output);
+    };
+
+    add.addEventListener("click", addFunc);
+    subtract.addEventListener("click", subtractFunc);
+    multiply.addEventListener("click", multiplyFunc);
+    divide.addEventListener("click", divideFunc);
+  </script>
+</html>
